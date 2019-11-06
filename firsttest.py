@@ -11,8 +11,12 @@ element.send_keys(Keys.RETURN)
 felement = driver.find_element_by_name("password")
 #felement.send_keys("")
 felement.send_keys(Keys.RETURN)
-selement = driver.find_element_by_xpath("//input[@class ='b-toolbar__btn js-shortcut']")
-driver.get("http://e.mail.ru" + selement.get_attribute("href"))
-selement.click()
+driver.title
+if driver.title == "Входящие - Почта Mail.ru":
+    selement = driver.find_element_by_xpath("//input[@class ='b-toolbar__btn js-shortcut']")
+    driver.get("http://e.mail.ru" + selement.get_attribute("href"))
+    selement.click()
+  
+else: 
+    print ("ошибка")
 driver.close()
-
